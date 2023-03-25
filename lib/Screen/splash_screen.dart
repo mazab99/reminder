@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:provider/provider.dart';
-import 'package:reminder/Screen/Home_screen.dart';
+import 'package:reminder/Screen/home_screen.dart';
 
 import '../Providers/Database.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 
-List<Color> Choose_color = [
+List<Color> appColors = [
   Colors.red,
   Colors.cyanAccent,
   Colors.green,

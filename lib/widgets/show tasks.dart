@@ -1,23 +1,23 @@
-
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
 import 'package:reminder/local_style/Local_styles.dart';
 
 import '../Models/task_model.dart';
 import '../Providers/Database.dart';
-import '../Screen/Add_Task_Screean.dart';
+import '../Screen/add_task_screen.dart';
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 
 import '../local_style/icons.dart';
-import '../ref.dart';
-import 'My_bottom_sheet.dart';
-import 'My_button.dart';
+import '../colors.dart';
+import 'my_bottom_sheet.dart';
+import 'my_button.dart';
 
-showTasks(
-    {required context,
-    required List<TaskModel> tasks,
-    required height,
-    required width}) {
+showTasks({
+  required context,
+  required List<TaskModel> tasks,
+  required height,
+  required width,
+}) {
   return Stack(
     children: [
       Consumer<Database_prov>(
@@ -34,7 +34,7 @@ showTasks(
                   closeOnScroll: true,
                   key: ValueKey(index),
                   endActionPane: ActionPane(
-                    motion: ScrollMotion(),
+                    motion: const ScrollMotion(),
                     children: [
                       SlidableAction(
                         // An action can be bigger than the others.
@@ -48,7 +48,7 @@ showTasks(
                     ],
                   ),
                   startActionPane: ActionPane(
-                    motion: ScrollMotion(),
+                    motion: const ScrollMotion(),
                     children: [
                       SlidableAction(
                         // An action can be bigger than the others.
@@ -106,13 +106,12 @@ showTasks(
                           icon: tasks[index].isCompleted == 1
                               ? Icon(
                                   Icons.check_box,
-                                  color:
-                                      Choose_color[tasks[index].color!.toInt()],
+                                  color: appColors[tasks[index].color!.toInt()],
                                   size: 30,
                                 )
                               : Icon(Icons.check_box_outline_blank_rounded,
-                                  color: Choose_color[
-                                      tasks[index].color!.toInt()]),
+                                  color:
+                                      appColors[tasks[index].color!.toInt()]),
                         ),
                         Expanded(
                           child: Text(
@@ -160,14 +159,14 @@ showTasks(
                 local_blue,
               ],
               txt: "Add Task",
-              wid: Icon(
+              wid: const Icon(
                 IconBroken.Plus,
                 color: Colors.white,
               ),
               func: () async {
                 //await Database_prov.init_db();
                 // await Database_prov.createTask(TaskModel(id:0, title:"gg", isCompleted: 0, isFavorites:0 , date: DateTime.now().toString(), startTime: DateTime.now().toString(), endTime: DateTime.now().toString(), color: 1, remind: 0, repeat: "no"));
-                TaskModel task = TaskModel(
+                TaskModel task = const TaskModel(
                   title: "_titleController.text",
                   isCompleted: 0,
                   isFavorites: 0,

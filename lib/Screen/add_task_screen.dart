@@ -4,13 +4,13 @@ import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:reminder/local_style/icons.dart';
-import 'package:reminder/widgets/My_button.dart';
+import 'package:reminder/widgets/my_button.dart';
 
 import '../Models/task_model.dart';
 import '../Providers/Database.dart';
 import '../Providers/notification_services.dart';
 import '../local_style/Local_styles.dart';
-import '../ref.dart';
+import '../colors.dart';
 import '../widgets/input_field.dart';
 class AddTaskScreen extends StatefulWidget {
 
@@ -324,13 +324,13 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Wrap(
-              children: Choose_color.map((e) => GestureDetector(
+              children: appColors.map((e) => GestureDetector(
                 child: Padding(
                   padding: const EdgeInsets.only(right: 10.0),
                   child: CircleAvatar(
                     backgroundColor:e,
                     radius: 16,
-                    child: _selectedColor == Choose_color.indexWhere((element) => e==element)
+                    child: _selectedColor == appColors.indexWhere((element) => e==element)
                         ? const Icon(
                       Icons.done,
                       color: Colors.white,
@@ -341,7 +341,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 onTap: () {
                   setState(() {
 
-                    _selectedColor =Choose_color.indexWhere((element) => e==element) ;
+                    _selectedColor =appColors.indexWhere((element) => e==element) ;
                   });
                 },
               ),).toList()

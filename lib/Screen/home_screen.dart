@@ -2,14 +2,14 @@ import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
 import 'package:reminder/Models/task_model.dart';
-import 'package:reminder/Screen/Add_Task_Screean.dart';
+import 'package:reminder/Screen/add_task_screen.dart';
 import 'package:reminder/local_style/icons.dart';
-import 'package:reminder/ref.dart';
-import 'package:reminder/widgets/My_button.dart';
+import 'package:reminder/colors.dart';
+import 'package:reminder/widgets/my_button.dart';
 
 import '../Providers/Database.dart';
 import '../widgets/show tasks.dart';
-import 'calender_page.dart';
+import 'calender_screen.dart';
 
 
 class HomeScreen extends StatefulWidget {

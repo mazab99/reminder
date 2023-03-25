@@ -5,7 +5,7 @@ import 'package:reminder/Providers/Database.dart';
 
 import '../Models/task_model.dart';
 import '../local_style/icons.dart';
-import 'My_button.dart';
+import 'my_button.dart';
 
 TextEditingController currentPasswordController = TextEditingController();
 TextEditingController newPasswordController = TextEditingController();

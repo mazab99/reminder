@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:reminder/Providers/Database.dart';
 import 'package:reminder/Providers/notification_services.dart';
 import 'package:reminder/Screen/splash_screen.dart';
-import 'Screen/Add_Task_Screean.dart';
-import 'Screen/calender_page.dart';
+import 'Screen/add_task_screen.dart';
+import 'Screen/calender_screen.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
